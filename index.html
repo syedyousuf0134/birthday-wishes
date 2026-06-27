@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<script src="script.js"></script>
+<body>
+
+<div class="container">
+
+    <div class="login-box">
+
+        <h1>🎂 Welcome 🎂</h1>
+
+        <h2>Enter Your Details</h2>
+
+        <input
+        type="text"
+        id="name"
+        placeholder="Full Name">
+
+        <input
+        type="email"
+        id="email"
+        placeholder="Email ID">
+
+        <button onclick="submitForm()">
+
+            Submit ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function submitForm(){
+
+let name=document.getElementById("name").value;
+
+let email=document.getElementById("email").value;
+
+
+if(name==="" || email==="")
+{
+alert("Please fill all details");
+return;
+}
+
+
+localStorage.setItem("name",name);
+
+localStorage.setItem("email",email);
+
+
+window.location.href="intro.html";
+
+
+}
+
+</script>
+
+</body>
+</html>

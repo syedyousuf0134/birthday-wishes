@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>❤️ Memory with Joy ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffe6f0,#fff5f5);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:85%;
+    max-width:1000px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.memory-section{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.memory-photo{
+    width:250px;
+    height:320px;
+    object-fit:cover;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.memory-text{
+    flex:1;
+}
+
+.memory-text h1{
+    color:#ff4081;
+    margin-bottom:20px;
+}
+
+.memory-text p{
+    font-size:18px;
+    line-height:1.8;
+    color:#444;
+}
+
+.navigation{
+    margin-top:40px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.navigation button{
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.navigation button:hover{
+    transform:scale(1.05);
+}
+
+</style>
+</head>
+<audio id="bgMusic" loop>
+    <source src="music/song2.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const bgMusic = document.getElementById("bgMusic");
+
+window.addEventListener("load", () => {
+    const savedTime = localStorage.getItem("musicTime");
+
+    if (savedTime) {
+        bgMusic.currentTime = parseFloat(savedTime);
+    }
+
+    bgMusic.play().catch(() => {});
+});
+
+setInterval(() => {
+    localStorage.setItem("musicTime", bgMusic.currentTime);
+}, 500);
+
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("musicTime", bgMusic.currentTime);
+});
+</script>
+
+<body>
+
+<div class="container">
+
+    <div class="memory-section">
+
+        <img src="images/photo2.jpg" class="memory-photo" alt="Memory with Joy">
+
+        <div class="memory-text">
+
+            <h1>❤️ Memory with Joy ❤️</h1>
+
+            <p>
+                Looking back at these four years, I realize that some of my
+                happiest memories became special because you were always
+                a part of them.
+            </p>
+
+            <br>
+
+            <p>
+                For four wonderful years, every laugh, every joke, and every
+                moment we shared became memories that I will always treasure
+                and cherish. These memories will forever hold a special place
+                in my heart.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="navigation">
+
+        <button onclick="previousPage()">
+            ⬅ Previous
+        </button>
+
+        <button onclick="nextPage()">
+            Next ➡
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function previousPage(){
+    window.location.href="birthday.html";
+}
+
+function nextPage(){
+    window.location.href="happiness.html";
+}
+
+</script>
+
+</body>
+</html>

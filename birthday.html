@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<script src="script.js"></script>
+<body>
+
+<div class="container">
+
+<div class="birthday-box">
+
+<h1>🎂 Happy Birthday 🎂</h1>
+
+<h2 id="typing"></h2>
+
+<p>
+
+Happy Birthday to my best friend, my brother, and one of the greatest blessings in my life.
+
+May Allah bless you with happiness, health, peace, success and endless smiles.
+
+May every dream of yours become reality and may every step of your journey bring joy and prosperity.
+
+Thank you for being an unforgettable part of life.
+
+</p>
+
+<br>
+
+<div class="card">
+
+<h2>❤️ Memory with Joy ❤️</h2>
+
+<p>
+
+Click below to begin a beautiful journey filled with memories, happiness and unforgettable moments.
+
+</p>
+
+<button onclick="startJourney()">
+
+Begin Journey →
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function startJourney()
+{
+window.location.href="joy.html";
+}
+
+
+let text="Happy Birthday KUKKU ❤️";
+let i=0;
+
+function typing()
+{
+
+if(i<text.length)
+{
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,100);
+}
+
+}
+
+typing();
+
+</script>
+
+</body>
+</html>
